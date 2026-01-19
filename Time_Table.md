@@ -1,34 +1,34 @@
 # Task 1: Setup e Architettura
  - Task 1.1: Setup Repository e Progetto Unity [2-3ore]
-    1. Creare la repository per il gioco
-    2. Setup per progetto Unity 2D (placeholder iniziali)
+    1. Creare la repository per il gioco  -  Tempo effettivo [1ora]
+    2. Setup per progetto Unity 2D (placeholder iniziali)  -  Tempo effettivo [8ore]
 
- - Task 1.2: Setup Repository per le Analytics e il Database [3-4ore]
+ - Task 1.2: Setup Repository per le Analytics e il Database [3-4ore]   [TODO]
     1. Creo repository per Analytics
     2. Setup per MongoDB in locale
     3. Scrivere lo schema dati iniziale per la raccolta (da modificare in seguito)
 
 # Task 2: MVP del gioco
  - Task 2.1: Creazione griglia e movimento player (singolo) [1giorno]
-    1. Creazione griglia 8x5
-    2. implementazione del movimento manhattan
-    3. Verifica del movimento con controlli di validità di movimento prima dello spostamento
+    1. Creazione griglia 8x5  -  Tempo effettivo [6ore]
+    2. implementazione del movimento manhattan  -  Tempo efettivo [8ore]
+    3. Verifica del movimento con controlli di validità di movimento prima dello spostamento  -  Tempo effettivo [8ore]
 
  - Task 2.2: Turni di Gioco [6-8ore]
-    1. Implementazione degli stati dei turni (giocatore/Boss/Fineturno...)
-    2. Gestione movimento turno (massimo 2 passi)
+    1. Implementazione degli stati dei turni (giocatore/Boss/Fineturno...)  -  Tempo effettivo [4ore] [TODO movimento boss]
+    2. Gestione movimento turno (massimo 2 passi)  -  Tempo effettivo [4ore]
 
  - Task 2.3: UI di base [1giorno]
-    1. Disegnare la griglia di gioco
-    2. Aggiungere bottoni di gioco (Start/Endturn)
-    3. Aggiungere feedback con log a schermo delle varie azioni
+    1. Disegnare la griglia di gioco  [considerato nel tempo per la creazione della griglia]
+    2. Aggiungere bottoni di gioco (Start/Endturn)  -  Tempo effettivo[1ora]  [TODO]
+    3. Aggiungere feedback con log a schermo delle varie azioni  -  Tempo effettivo [3ore]
 
-# Task 3: Gestione Analytics
+# Task 3: Gestione Analytics [TODO]
     [Le stime per questa parte sono indicative essendo argomenti su cui ho meno dimestichezza]
  - Task 3.1 Backend API [1giorno]
  - Task 3.2 Invio asincrono dei dati per scrittura su MOngoDB [1giorno]
 
-# Task 4: non MVP features del gioco
+# Task 4: non MVP features del gioco [TODO]
  - Task 4.1: Sistema di azione con dadi [6ore]
     1. Creazione di una classe carattere con HP ed un alista di azioni
     2. Implementazione del lancio del D6
@@ -44,7 +44,7 @@
     2. Logica di incremento e decremento
     3. Visualizzazione aggro in UI?
 
-# Task 5: logica Boss
+# Task 5: logica Boss [TODO]
  - Task 5.1: Selezione del target (Boss state machine) [8ore]
     1. cerco il PG con aggro maggiore
 
@@ -57,7 +57,7 @@
     1. Implementazione skill del boss
     2. Implementazioe logica delle collisioni
 
-# Task 6: Visualizzazione delle Analytics
+# Task 6: Visualizzazione delle Analytics [TODO]
  - Task 6.1: Aggregazione dati con query su MongooDB [2-3ore]
 
  - Task 6.2: Dashboard frontend [2-3ore]
@@ -66,12 +66,12 @@
 
  - task 6.3: Heatmap celle occupate maggiormente[2ore]?
 
-# Task 7: Docker
+# Task 7: Docker [TODO]
  - Task 7.1: Creazione Dockerfile per backend/frontend Analytics [2ore]
 
  - task 7.2: Setup Portainer [4-5ore]
 
-# Task 8: Refactoring e Pulizia
+# Task 8: Refactoring e Pulizia [TODO]
  - task 8.1: refactoring [2-3giorni]
 
  - task 8.2: pulizia e commenti [1-2giorni]
