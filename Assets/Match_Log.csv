@@ -314,3 +314,60 @@ Timestamp,Turno,Personaggio,Azione,Dettagli
 18:32:44,Round 1,D,Movimento,(1, 4) -> (2, 4)
 18:32:45,Round 1,D,Fine Turno,Passi usati: 2
 18:32:45,Round 2,A,Inizio Turno,HP: 20
+19:15:36,Round 1,SISTEMA,Inizio Partita,Nuova sessione avviata
+19:15:36,Round 1,A,Inizio Turno,Primo turno della partita
+19:15:44,Round 1,A,Movimento,(0, 0) -> (1, 0)
+19:15:45,Round 1,A,Movimento,(1, 0) -> (2, 0)
+19:20:59,Round 1,SISTEMA,Inizio Partita,Nuova sessione avviata
+19:20:59,Round 1,A,Inizio Turno,Primo turno della partita
+19:21:03,Round 1,A,Movimento,(0, 0) -> (1, 0)
+19:21:03,Round 1,A,Movimento,(1, 0) -> (2, 0)
+19:21:04,Round 1,A,Fine Turno,Passi usati: 2
+19:21:04,Round 1,B,Inizio Turno,HP: 30
+19:21:05,Round 1,B,Movimento,(0, 1) -> (1, 1)
+19:21:05,Round 1,B,Movimento,(1, 1) -> (2, 1)
+19:21:05,Round 1,B,Fine Turno,Passi usati: 2
+19:21:05,Round 1,C,Inizio Turno,HP: 15
+19:21:05,Round 1,C,Movimento,(0, 3) -> (1, 3)
+19:21:05,Round 1,C,Movimento,(1, 3) -> (2, 3)
+19:21:06,Round 1,C,Fine Turno,Passi usati: 2
+19:21:06,Round 1,D,Inizio Turno,HP: 10
+19:21:06,Round 1,D,Movimento,(0, 4) -> (1, 4)
+19:21:06,Round 1,D,Movimento,(1, 4) -> (2, 4)
+19:21:06,Round 1,D,Fine Turno,Passi usati: 2
+19:21:06,Round 2,A,Inizio Turno,HP: 20
+19:21:07,Round 2,A,Movimento,(2, 0) -> (3, 0)
+19:21:07,Round 2,A,Movimento,(3, 0) -> (4, 0)
+19:21:07,Round 2,A,Fine Turno,Passi usati: 2
+19:21:07,Round 2,B,Inizio Turno,HP: 30
+19:21:07,Round 2,B,Movimento,(2, 1) -> (3, 1)
+19:21:07,Round 2,B,Movimento,(3, 1) -> (4, 1)
+19:21:07,Round 2,B,Fine Turno,Passi usati: 2
+19:21:07,Round 2,C,Inizio Turno,HP: 15
+19:21:08,Round 2,C,Movimento,(2, 3) -> (2, 2)
+19:21:09,Round 2,C,Movimento,(2, 2) -> (2, 1)
+19:21:09,Round 2,C,Fine Turno,Passi usati: 2
+19:21:09,Round 2,D,Inizio Turno,HP: 10
+19:21:09,Round 2,D,Movimento,(2, 4) -> (1, 4)
+19:21:10,Round 2,D,Movimento,(1, 4) -> (0, 4)
+19:21:10,Round 2,D,Fine Turno,Passi usati: 2
+19:21:10,Round 3,A,Inizio Turno,HP: 20
+19:21:11,Round 3,A,Movimento,(4, 0) -> (3, 0)
+19:21:12,Round 3,A,Movimento,(3, 0) -> (3, 1)
+19:21:12,Round 3,A,Fine Turno,Passi usati: 2
+19:21:12,Round 3,B,Inizio Turno,HP: 30
+19:21:12,Round 3,B,Movimento,(4, 1) -> (4, 2)
+19:21:12,Round 3,B,Movimento,(4, 2) -> (4, 3)
+19:21:13,Round 3,B,Fine Turno,Passi usati: 2
+19:21:13,Round 3,C,Inizio Turno,HP: 15
+19:21:14,Round 3,C,Fine Turno,Passi usati: 0
+19:21:14,Round 3,D,Inizio Turno,HP: 10
+19:21:14,Round 3,D,Movimento,(0, 4) -> (1, 4)
+19:21:15,Round 3,D,Fine Turno,Passi usati: 1
+19:21:15,Round 4,A,Inizio Turno,HP: 20
+19:21:15,Round 4,A,Movimento,(3, 1) -> (3, 2)
+19:21:15,Round 4,A,Fine Turno,Passi usati: 1
+19:21:15,Round 4,B,Inizio Turno,HP: 30
+19:21:15,Round 4,B,Movimento,(4, 3) -> (4, 4)
+19:21:15,Round 4,B,Fine Turno,Passi usati: 1
+19:21:15,Round 4,C,Inizio Turno,HP: 15

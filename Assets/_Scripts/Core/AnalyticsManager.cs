@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.IO; // Serve per leggere e scrivere file
+using System.IO; //per comporre CSV
 using System;
 
 public class AnalyticsManager : MonoBehaviour
@@ -15,10 +15,10 @@ public class AnalyticsManager : MonoBehaviour
 
     void Start()
     {
-        // Il file verrà salvato nella cartella del progetto (Assets)
+        //file salvato nella cartella ASSets
         _filePath = Application.dataPath + "/Match_Log.csv";
 
-        // Se il file non esiste, creiamo l'intestazione delle colonne per Excel
+        //s enon esiste lo creiamo
         if (!File.Exists(_filePath))
         {
             string header = "Timestamp,Turno,Personaggio,Azione,Dettagli\n";
@@ -28,19 +28,18 @@ public class AnalyticsManager : MonoBehaviour
         LogEvent("SISTEMA", "Inizio Partita", "Nuova sessione avviata");
     }
 
-    // Funzione generica per registrare qualsiasi cosa
+    //Funzione generica per registrare qualsiasi cosa
     public void LogEvent(string characterName, string action, string details)
     {
-        // Formato: DataOra, NumeroTurno, NomeChi, CosaHaFatto, InfoExtra
-        // Usiamo la virgola per separare le colonne del CSV
+       
         string timestamp = DateTime.Now.ToString("HH:mm:ss");
-        string turnInfo = "Round " + TurnManager.Instance.CurrentRound; // Aggiungeremo CurrentRound nel TurnManager
+        string turnInfo = "Round " + TurnManager.Instance.CurrentRound;
         
         string line = $"{timestamp},{turnInfo},{characterName},{action},{details}\n";
 
-        // Scrive la riga nel file (Append significa che aggiunge in fondo senza cancellare il resto)
+        
         File.AppendAllText(_filePath, line);
         
-        Debug.Log($"[LOG SALVATO]: {line}"); // Feedback in console
+        Debug.Log($"[LOG SALVATO]: {line}"); //feeedback sulla console
     }
 }

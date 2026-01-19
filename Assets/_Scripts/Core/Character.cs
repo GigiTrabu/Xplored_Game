@@ -3,14 +3,14 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] private int _maxHP = 20;
+    [SerializeField] private int _maxHP = 20; //modificato poi su unity per singolo player
     public int CurrentHP { get; private set; }
 
-    // Dati Posizione
+    //Dati sulla posizione
     public int GridX { get; private set; }
     public int GridY { get; private set; }
 
-    // Dati Turno
+    // dati turno
     public int StepsTaken { get; private set; } = 0;
     public int MaxStepsPerTurn = 2;
 
@@ -39,14 +39,9 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void StartTurn()
+    public void StartTurn()  //potrebbe non servire più TODO
     {
         StepsTaken = 0;
-        // Abbiamo tolto il cambio colore!
     }
 
-    public void EndTurn()
-    {
-        // Abbiamo tolto il cambio colore!
-    }
 }

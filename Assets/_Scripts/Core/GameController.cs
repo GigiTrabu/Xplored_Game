@@ -8,17 +8,17 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        // 1. Gestione FINE TURNO (Spazio)
+        //fine turno possibile anche con space (TODO change later maybe)
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             TurnManager.Instance.NextTurn();
             return;
         }
 
-        // 2. Gestione Cooldown per non muoversi troppo veloce
+        //suggerito bho ok
         if (Time.time - _lastInputTime < _inputCooldown) return;
 
-        // 3. Gestione MOVIMENTO (WASD / Frecce)
+        //gestione WASD/frecce
         Vector2Int moveDir = Vector2Int.zero;
 
         if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed)
@@ -43,60 +43,60 @@ public class GameController : MonoBehaviour
         
         if (hero == null) return;
 
-        // A. Controllo Passi
+        //check passi
         if (hero.StepsTaken >= hero.MaxStepsPerTurn)
         {
             Debug.Log("Passi esauriti! Premi SPAZIO per passare il turno.");
             return;
         }
 
-        // B. Calcolo destinazione prevista
+        //calcolo destinazione per logo
         int targetX = hero.GridX + dir.x;
         int targetY = hero.GridY + dir.y;
 
-        // C. Controllo Muri
+        //check muri
         if (targetX < 0 || targetX >= 8 || targetY < 0 || targetY >= 5)
         {
             Debug.Log("Muro!");
             return;
         }
 
-        // D. Controllo Occupato
+        //check occupato
         if (IsTileOccupied(targetX, targetY))
         {
             Debug.Log("Occupato!");
             return;
         }
 
-        // --- SALVIAMO LA POSIZIONE DI PARTENZA ---
+        //sAVE INITAL POS per log
         string oldPos = $"({hero.GridX}, {hero.GridY})";
 
-        // E. Movimento valido (Qui GridX e GridY vengono aggiornati dentro Character.cs)
+        //Esegui movimento
         hero.Move(dir.x, dir.y);
 
-        // --- SALVIAMO LA POSIZIONE DI ARRIVO ---
+        //SAVE FINALE PO per log
         string newPos = $"({hero.GridX}, {hero.GridY})";
         
-        // F. LOG PER ANALYTICS (Formato: Da -> A)
+        //invio movimento ad analytics
         AnalyticsManager.Instance.LogEvent(hero.name, "Movimento", $"{oldPos} -> {newPos}");
         
         Debug.Log($"Passi: {hero.StepsTaken}/2");
     }
 
-    // Funzione che controlla se c'è qualcuno in quella casella
+    //Funzione che controlla se c'è qualcuno in quella casella
     bool IsTileOccupied(int x, int y)
     {
-        // Trova tutti i personaggi nella scena (Eroi e Boss)
+        
         Character[] allCharacters = FindObjectsOfType<Character>();
 
         foreach (var c in allCharacters)
         {
-            // Se il personaggio è attivo (vivo) E si trova alle coordinate target
+            // Se il personaggio è presente
             if (c.gameObject.activeSelf && c.GridX == x && c.GridY == y)
             {
-                return true; // Sì, è occupato
+                return true; 
             }
         }
-        return false; // No, è libero
+        return false;
     }
 }

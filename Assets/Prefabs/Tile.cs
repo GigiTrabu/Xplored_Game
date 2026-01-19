@@ -2,36 +2,28 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    // Queste variabili diranno alla casella dove si trova nella griglia (es. 0,0 o 7,4)
+    // x,y per caselle
     public int X { get; private set; }
     public int Y { get; private set; }
 
     [SerializeField] private SpriteRenderer _renderer;
-    [SerializeField] private Color _baseColor, _offsetColor; // Colori per fare l'effetto scacchiera
+    [SerializeField] private Color _baseColor, _offsetColor; //doppio colorep per eefftto scacchiera
 
-    [SerializeField] private GameObject _highlight; // Trascineremo qui un oggetto grafico
+    [SerializeField] private GameObject _highlight; 
 
-    // ... (il resto delle variabili Awake e Init rimangono uguali) ...
 
-    public void SetHighlight(bool active)
-    {
-        if (_highlight != null)
-        {
-            _highlight.SetActive(active);
-        }
-    }
 
-    // Questa funzione verrà chiamata dal Manager quando crea la casella
+    //Fnzione chiamata dall'object manager per creazione mappa
     public void Init(int x, int y)
     {
         X = x;
         Y = y;
 
-        // Calcolo matematico per alternare i colori (come una scacchiera)
+        //calcolo per scacchiera
         bool isOffset = (x + y) % 2 == 1;
         _renderer.color = isOffset ? _offsetColor : _baseColor;
         
-        // Cambiamo il nome nell'editor per trovarla facilmente (es. "Tile 3,2")
+        //assegno un nome per ogni mattonella diversa
         name = $"Tile {x},{y}";
     }
 }

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // Serve per la UI
+using TMPro; //per la UI
 
 public class TurnManager : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class TurnManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private TextMeshProUGUI _turnText;
 
-    // --- NUOVO: Contatore Round per le Analytics ---
+    //count dei round per test analitics
     public int CurrentRound { get; private set; } = 1;
 
     private List<Character> _turnOrder;
@@ -34,7 +34,7 @@ public class TurnManager : MonoBehaviour
         var allCharacters = FindObjectsOfType<Character>();
         _turnOrder = new List<Character>();
 
-        // Filtra: niente Boss nella lista turni giocatori
+        //per ora niente boss
         foreach (var c in allCharacters)
         {
             if (!c.name.ToLower().Contains("boss"))
@@ -43,7 +43,7 @@ public class TurnManager : MonoBehaviour
             }
         }
         
-        // Ordina per nome
+        //A,B;C;D
         _turnOrder.Sort((p1, p2) => p1.name.CompareTo(p2.name));
 
         Debug.Log($"TurnManager Inizializzato. Giocatori: {_turnOrder.Count}");
@@ -70,7 +70,7 @@ public class TurnManager : MonoBehaviour
     {
         if (ActiveCharacter == null) return;
 
-        // 1. Logga la fine del turno precedente
+        //log fine turno
         if (AnalyticsManager.Instance != null)
         {
             AnalyticsManager.Instance.LogEvent(ActiveCharacter.name, "Fine Turno", $"Passi usati: {ActiveCharacter.StepsTaken}");
@@ -82,14 +82,14 @@ public class TurnManager : MonoBehaviour
         if (_currentIndex >= _turnOrder.Count)
         {
             _currentIndex = 0;
-            CurrentRound++; // Aumenta il round
+            CurrentRound++; 
             Debug.Log($"--- NUOVO ROUND {CurrentRound} ---");
         }
 
         ActiveCharacter.StartTurn();
         UpdateUI();
 
-        // 2. Logga l'inizio del nuovo turno
+        //log nuovo turno
         if (AnalyticsManager.Instance != null)
         {
             AnalyticsManager.Instance.LogEvent(ActiveCharacter.name, "Inizio Turno", $"HP: {ActiveCharacter.CurrentHP}");
